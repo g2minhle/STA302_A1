@@ -79,7 +79,7 @@ Minh Le Hoang - 999 01 9930
 \end_layout
 
 \begin_layout Date
-Oct 15 16:00 
+Oct 15 14:05
 \end_layout
 
 \begin_layout Part*
@@ -836,6 +836,7 @@ ET NY SC TO
 \begin_layout Standard
 \begin_inset Graphics
 	filename 2b.png
+	scale 50
 
 \end_inset
 
@@ -900,6 +901,7 @@ _____ Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
 \begin_layout Standard
 \begin_inset Graphics
 	filename 2d.png
+	scale 50
 
 \end_inset
 
@@ -1338,6 +1340,7 @@ ____ BusinessLicenses MarriageLicenses
 \begin_layout Standard
 \begin_inset Graphics
 	filename 1.png
+	scale 50
 
 \end_inset
 
