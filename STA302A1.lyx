@@ -3,6 +3,9 @@
 \begin_document
 \begin_header
 \textclass article
+\begin_preamble
+\date{}
+\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
 \language english
@@ -25,9 +28,10 @@
 \bibtex_command default
 \index_command default
 \paperfontsize default
+\spacing single
 \use_hyperref false
 \papersize default
-\use_geometry false
+\use_geometry true
 \use_amsmath 1
 \use_esint 1
 \use_mhchem 1
@@ -42,6 +46,13 @@
 \shortcut idx
 \color #008000
 \end_index
+\leftmargin 1in
+\topmargin 1in
+\rightmargin 1in
+\bottommargin 1in
+\headheight 1in
+\headsep 1in
+\footskip 1in
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -61,6 +72,14 @@
 
 \begin_layout Title
 STA302 - Assignment 1
+\end_layout
+
+\begin_layout Author
+Minh Le Hoang - 999 01 9930
+\end_layout
+
+\begin_layout Date
+Oct 15 16:00 
 \end_layout
 
 \begin_layout Part*
@@ -179,7 +198,15 @@ Part A
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $=\frac{\left[\sum_{i=1}^{n}\frac{1}{fc}\left(X_{i}-\overline{X}\right)\left(Y_{i}-\overline{Y}\right)\right]^{2}}{\left[\sum_{i=1}^{n}\frac{1}{f^{2}}\left(X_{i}-\overline{X}\right)^{2}\right]\left[\sum_{i=1}^{n}\frac{1}{c^{2}}\left(Y_{i}-\overline{Y}\right)^{2}\right]}=\frac{\left(\frac{1}{fc}\right)^{2}\left[\sum_{i=1}^{n}\left(X_{i}-\overline{X}\right)\left(Y_{i}-\overline{Y}\right)\right]^{2}}{\frac{1}{f^{2}}\left[\sum_{i=1}^{n}\left(X_{i}-\overline{X}\right)^{2}\right]\frac{1}{c^{2}}\left[\sum_{i=1}^{n}\left(Y_{i}-\overline{Y}\right)^{2}\right]}=\frac{\left[\sum_{i=1}^{n}\left(X_{i}-\overline{X}\right)\left(Y_{i}-\overline{Y}\right)\right]}{\left[\sum_{i=1}^{n}\left(X_{i}-\overline{X}\right)^{2}\right]\left[\sum_{i=1}^{n}\left(Y_{i}-\overline{Y}\right)^{2}\right]}=R^{2}$
+\begin_inset Formula $=\frac{\left[\sum_{i=1}^{n}\frac{1}{fc}\left(X_{i}-\overline{X}\right)\left(Y_{i}-\overline{Y}\right)\right]^{2}}{\left[\sum_{i=1}^{n}\frac{1}{f^{2}}\left(X_{i}-\overline{X}\right)^{2}\right]\left[\sum_{i=1}^{n}\frac{1}{c^{2}}\left(Y_{i}-\overline{Y}\right)^{2}\right]}=\frac{\left(\frac{1}{fc}\right)^{2}\left[\sum_{i=1}^{n}\left(X_{i}-\overline{X}\right)\left(Y_{i}-\overline{Y}\right)\right]^{2}}{\frac{1}{f^{2}}\left[\sum_{i=1}^{n}\left(X_{i}-\overline{X}\right)^{2}\right]\frac{1}{c^{2}}\left[\sum_{i=1}^{n}\left(Y_{i}-\overline{Y}\right)^{2}\right]}=\frac{\left[\sum_{i=1}^{n}\left(X_{i}-\overline{X}\right)\left(Y_{i}-\overline{Y}\right)\right]^{2}}{\left[\sum_{i=1}^{n}\left(X_{i}-\overline{X}\right)^{2}\right]\left[\sum_{i=1}^{n}\left(Y_{i}-\overline{Y}\right)^{2}\right]}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Then 
+\begin_inset Formula $R'^{2}=R^{2}$
 \end_inset
 
 
@@ -202,10 +229,18 @@ Part A
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $s^{2}\left\{ b'_{1}\right\} =\sum_{i=1}^{n}\left(Y'_{i}-\widehat{Y'_{i}}\right)^{2}=\sum_{i=1}^{n}\left(\frac{\left(Y_{i}-a\right)}{c}-\frac{\widehat{Y_{i}}-a}{c}\right)^{2}=\sum_{i=1}^{n}\left(\frac{\left(Y_{i}-\widehat{Y_{i}}\right)}{c}\right)^{2}=\frac{1}{c^{2}}\sum_{i=1}^{n}\left(Y_{i}-\widehat{Y_{i}}\right)=\frac{1}{c^{2}}s^{2}\left\{ b{}_{1}\right\} $
+\begin_inset Formula $s^{2}\left\{ b'_{1}\right\} =\sum_{i=1}^{n}\left(Y'_{i}-\widehat{Y'_{i}}\right)^{2}=\sum_{i=1}^{n}\left(\frac{\left(Y_{i}-a\right)}{c}-\frac{\widehat{Y_{i}}-a}{c}\right)^{2}=\sum_{i=1}^{n}\left(\frac{\left(Y_{i}-\widehat{Y_{i}}\right)}{c}\right)^{2}=\frac{1}{c^{2}}\sum_{i=1}^{n}\left(Y_{i}-\widehat{Y_{i}}\right)$
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Then 
+\begin_inset Formula $s^{2}\left\{ b'_{1}\right\} =\frac{1}{c^{2}}s^{2}\left\{ b{}_{1}\right\} $
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -254,7 +289,321 @@ Then the transformations above do not affect inference for
 
 \begin_deeper
 \begin_layout Standard
+We have 
+\begin_inset Formula $SSE_{b_{0};b_{1}}=\sum_{i=1}^{n}\left(Y_{i}-\widehat{Y_{(b_{0};b_{1})i}}\right)^{2}=\sum_{i=1}^{n}\left(Y_{i}-b_{0}-b_{1}X_{i}\right)^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $b'_{1}=b_{1}+\Delta_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $b'_{0}=b_{0}+\Delta_{0}$
+\end_inset
+
+ with 
+\begin_inset Formula $\Delta_{1},\Delta_{0}\neq0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Let 
+\begin_inset Formula $SSE'=\sum_{i=1}^{n}\left(Y_{i}-\widehat{Y'_{i}}\right)^{2}=\sum_{i=1}^{n}\left(Y_{i}-b'_{0}-b'_{1}X_{i}\right)^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $=\sum_{i=1}^{n}\left(Y_{i}-\left(b_{0}+\Delta_{0}\right)-\left(b_{1}+\Delta_{1}\right)X_{i}\right)^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $=\sum_{i=1}^{n}\left(Y_{i}-b_{0}-\Delta_{0}-b_{1}X_{i}-\Delta_{1}X_{i}\right)^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $=\sum_{i=1}^{n}\left(Y_{i}-b_{0}-b_{1}X_{i}-\Delta_{1}X_{i}-\Delta_{0}\right)^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $=\sum_{i=1}^{n}\left(Y_{i}-b_{0}-b_{1}X_{i}-\left(\Delta_{1}X_{i}+\Delta_{0}\right)\right)^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $=\sum_{i=1}^{n}\left(\left(Y_{i}-b_{0}-b_{1}X_{i}\right)^{2}+\left(\Delta_{1}X_{i}+\Delta_{0}\right)^{2}-2\left(Y_{i}-b_{0}-b_{1}X_{i}\right)\left(\Delta_{1}X_{i}+\Delta_{0}\right)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $=SSE_{b_{0};b_{1}}+\sum_{i=1}^{n}\left(\Delta_{1}X_{i}+\Delta_{0}\right)^{2}-2\sum_{i=1}^{n}\left(Y_{i}-b_{0}-b_{1}X_{i}\right)\left(\Delta_{1}X_{i}+\Delta_{0}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $=SSE_{b_{0};b_{1}}+\sum_{i=1}^{n}\left(\Delta_{1}X_{i}+\Delta_{0}\right)^{2}-2\sum_{i=1}^{n}\left(e_{(b_{0};b_{1})i}\right)\left(\Delta_{1}X_{i}+\Delta_{0}\right)$
+\end_inset
+
 .
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $=SSE_{b_{0};b_{1}}+\sum_{i=1}^{n}\left(\Delta_{1}X_{i}+\Delta_{0}\right)^{2}-2\sum_{i=1}^{n}\Delta_{1}e_{(b_{0};b_{1})i}X_{i}-2\sum_{i=1}^{n}e_{(b_{0};b_{1})i}\Delta_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $=SSE_{b_{0};b_{1}}+\sum_{i=1}^{n}\left(\Delta_{1}X_{i}+\Delta_{0}\right)^{2}-2\Delta_{0}\sum_{i=1}^{n}e_{(b_{0};b_{1})i}X_{i}-2\Delta_{0}\sum_{i=1}^{n}e_{(b_{0};b_{1})i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $=SSE_{b_{0};b_{1}}+\sum_{i=1}^{n}\left(\Delta_{1}X_{i}+\Delta_{0}\right)^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Because 
+\begin_inset Formula $\sum_{i=1}^{n}\left(\Delta_{1}X_{i}+\Delta_{0}\right)^{2}\geq0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then 
+\begin_inset Formula $SSE_{b_{0};b_{1}}+\sum_{i=1}^{n}\left(\Delta\left[X_{i}-\overline{X}\right]\right)^{2}\geq SSE_{b_{0};b_{1}}\iff SSE'\geq SSE_{b_{0};b_{1}}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Then 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $SSE_{b_{0};b_{1}}$
+\end_inset
+
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+is the minimum
+\end_layout
+
+\begin_layout Standard
+Then 
+\begin_inset Formula $SSE$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+is minimized with 
+\begin_inset Formula $b_{1}$
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -262,5 +611,844 @@ Then the transformations above do not affect inference for
 Part B
 \end_layout
 
+\begin_layout Enumerate
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+'data.frame': 224 obs.
+ of 3 variables:
+\end_layout
+
+\begin_layout Plain Layout
+$ TIME_PERIOD : Factor w/ 56 levels "2011-01","2011-02",..: 1 1 1 1 2 2 2
+ 2 3 3 ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ CIVIC_CENTRE : Factor w/ 4 levels "ET","NY","SC",..: 1 2 3 4 1 2 3 4 1 2
+ ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ MARRIAGE_LICENSES: int 80 136 159 367 109 150 154 383 177 231 ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+NULL 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+_ TIME_PERIOD CIVIC_CENTRE MARRIAGE_LICENSES 
+\end_layout
+
+\begin_layout Plain Layout
+1 2011-01 ET 80 
+\end_layout
+
+\begin_layout Plain Layout
+2 2011-01 NY 136 
+\end_layout
+
+\begin_layout Plain Layout
+3 2011-01 SC 159 
+\end_layout
+
+\begin_layout Plain Layout
+4 2011-01 TO 367 
+\end_layout
+
+\begin_layout Plain Layout
+5 2011-02 ET 109 
+\end_layout
+
+\begin_layout Plain Layout
+6 2011-02 NY 150 
+\end_layout
+
+\begin_layout Plain Layout
+......
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+_ TIME_PERIOD Month Year MARRIAGE_LICENSES 
+\end_layout
+
+\begin_layout Plain Layout
+1 2011-04 Apr 2011 1376 
+\end_layout
+
+\begin_layout Plain Layout
+2 2011-08 Aug 2011 1933 
+\end_layout
+
+\begin_layout Plain Layout
+3 2011-12 Dec 2011 785 
+\end_layout
+
+\begin_layout Plain Layout
+4 2011-02 Feb 2011 796 
+\end_layout
+
+\begin_layout Plain Layout
+5 2011-01 Jan 2011 742 
+\end_layout
+
+\begin_layout Plain Layout
+6 2011-07 Jul 2011 1943
+\end_layout
+
+\begin_layout Plain Layout
+......
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+ET NY SC TO 
+\end_layout
+
+\begin_layout Plain Layout
+9568 14028 13354 35060
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename 2b.png
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+_____ Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec 
+\end_layout
+
+\begin_layout Plain Layout
+2011 742 796 1210 1376 1885 1824 1943 1933 1321 1013 816 785 
+\end_layout
+
+\begin_layout Plain Layout
+2012 902 879 1227 1232 1650 1843 2015 1930 1143 1065 826 785 
+\end_layout
+
+\begin_layout Plain Layout
+2013 763 725 990 1360 1581 1579 1999 1821 1229 940 709 679 
+\end_layout
+
+\begin_layout Plain Layout
+2014 785 717 1062 1294 1682 1806 1962 1845 1280 1001 673 785 
+\end_layout
+
+\begin_layout Plain Layout
+2015 739 730 1160 1344 1663 1927 2184 1855 NA NA NA NA 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename 2d.png
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+'data.frame': 143618 obs.
+ of 16 variables: 
+\end_layout
+
+\begin_layout Plain Layout
+$ Category : chr "TAXICAB BROKER" "TAXICAB BROKER" "TAXICAB BROKER" "TAXICAB
+ BROKER" ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Licence.No.
+ : chr "B032020976" "B032025475" "B032022604" "B030000236" ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Operating.Name : chr "EMERALD TAXI" "PREMIER TAXI" "A TORONTO TAXI" "KIPLING
+ KAB" ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Issued : chr "24/03/95" "24/06/96" "17/08/95" "03/03/88" ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Client.Name : chr "NAEGELI,LEO/PATEL,CHHOTUBHAI" "PATEL, CHHOTUBHAI" ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Business.Phone : num NA NA NA NA NA NA NA NA NA NA ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Business.Phone.Ext.
+ : chr "" "" "" "" ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Licence.Address.Line.1 : chr "420 ORMONT DR" "131 HAWKSHEAD CRES" "99 MORBANK
+ DR" ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Licence.Address.Line.2 : chr "TORONTO, ON" "TORONTO, ON" "TORONTO, ON" "TORONTO,
+ ON" ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Licence.Address.Line.3 : chr "M9L 1N9" "M1W 2Z4" "M1V 2M1" "M9W 2Z2" ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Conditions : chr "" "" "" "" ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Free.Form.Conditions.Line.1: chr "" "" "" "" ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Free.Form.Conditions.Line.2: chr "" "" "" "" ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Plate.No.
+ : chr "" "" "" "" ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Endorsements : chr "TAXICAB BROKER;" "TAXICAB BROKER;" "TAXICAB BROKER;"
+ ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Cancel.Date : chr "01/05/97" "20/05/97" "31/12/97" "08/06/98" ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+NULL
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+'data.frame': 143618 obs.
+ of 18 variables: 
+\end_layout
+
+\begin_layout Plain Layout
+$ Category : chr "TAXICAB BROKER" "TAXICAB BROKER" "TAXICAB BROKER" "TAXICAB
+ BROKER" ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Licence.No.
+ : chr "B032020976" "B032025475" "B032022604" "B030000236" ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Operating.Name : chr "EMERALD TAXI" "PREMIER TAXI" "A TORONTO TAXI" "KIPLING
+ KAB" ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Issued : Date, format: "1995-03-24" "1996-06-24" "1995-08-17" ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Client.Name : chr "NAEGELI,LEO/PATEL,CHHOTUBHAI" "PATEL, CHHOTUBHAI" ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Business.Phone : num NA NA NA NA NA NA NA NA NA NA ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Business.Phone.Ext.
+ : chr "" "" "" "" ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Licence.Address.Line.1 : chr "420 ORMONT DR" "131 HAWKSHEAD CRES" "99 MORBANK
+ DR" ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Licence.Address.Line.2 : chr "TORONTO, ON" "TORONTO, ON" "TORONTO, ON" "TORONTO,
+ ON" ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Licence.Address.Line.3 : chr "M9L 1N9" "M1W 2Z4" "M1V 2M1" "M9W 2Z2" ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Conditions : chr "" "" "" "" ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Free.Form.Conditions.Line.1: chr "" "" "" "" ...
+ $ Free.Form.Conditions.Line.2: chr "" "" "" "" ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Plate.No.
+ : chr "" "" "" "" ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Endorsements : chr "TAXICAB BROKER;" "TAXICAB BROKER;" "TAXICAB BROKER;"
+ ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Cancel.Date : chr "01/05/97" "20/05/97" "31/12/97" "08/06/98" ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Month : chr "Mar" "Jun" "Aug" "Mar" ...
+ 
+\end_layout
+
+\begin_layout Plain Layout
+$ Year : num 1995 1996 1995 1988 1994 ...
+\end_layout
+
+\begin_layout Plain Layout
+NULL
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+__ Month Year YYYYMM 
+\end_layout
+
+\begin_layout Plain Layout
+80 Jan 2013 201301 
+\end_layout
+
+\begin_layout Plain Layout
+81 May 2012 201205 
+\end_layout
+
+\begin_layout Plain Layout
+82 Aug 2012 201208 
+\end_layout
+
+\begin_layout Plain Layout
+84 Sep 2012 201209 
+\end_layout
+
+\begin_layout Plain Layout
+85 Oct 2012 201210 
+\end_layout
+
+\begin_layout Plain Layout
+86 Feb 2011 201102
+\end_layout
+
+\begin_layout Plain Layout
+......
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+_____ Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec 
+\end_layout
+
+\begin_layout Plain Layout
+2011 468 478 572 578 563 520 386 467 414 480 494 451 
+\end_layout
+
+\begin_layout Plain Layout
+2012 417 405 490 529 530 524 435 495 394 591 485 354 
+\end_layout
+
+\begin_layout Plain Layout
+2013 491 383 455 558 590 527 425 455 526 471 464 343 
+\end_layout
+
+\begin_layout Plain Layout
+2014 435 353 673 514 630 579 583 477 590 532 554 434 
+\end_layout
+
+\begin_layout Plain Layout
+2015 462 416 632 647 616 577 707 594 NA NA NA NA
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Section*
+Part C
+\end_layout
+
+\begin_layout Enumerate
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+____ BusinessLicenses MarriageLicenses 
+\end_layout
+
+\begin_layout Plain Layout
+[1,] 468 742 
+\end_layout
+
+\begin_layout Plain Layout
+[2,] 417 902 
+\end_layout
+
+\begin_layout Plain Layout
+[3,] 491 763 
+\end_layout
+
+\begin_layout Plain Layout
+[4,] 435 785 
+\end_layout
+
+\begin_layout Plain Layout
+[5,] 462 739 
+\end_layout
+
+\begin_layout Plain Layout
+[6,] 478 796
+\end_layout
+
+\begin_layout Plain Layout
+....
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename 1.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can still do regression but there will be a lot of errors 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Marriage Licenses =126.250
+\end_layout
+
+\begin_layout Standard
+BusinessLicenses = 2.302 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Our interception presents total number of new Marriage Licenses within a
+ month of there is no new Business Licenses within a month
+\end_layout
+
+\begin_layout Standard
+Our slope present number of new Marriage Licenses within a month for every
+ new Marriage Licenses within a month
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+88% Confidence Interval for:
+\end_layout
+
+\begin_layout Itemize
+Intercept: 
+\begin_inset Formula $\left[-432.902886;685.40321\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Slope: 
+\begin_inset Formula $\left[1.206791;3.39676\right]$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+The predicted number of marriage licenses issued if there will be 550 business
+ licenses issued:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $1277.138$
+\end_inset
+
+, with 
+\begin_inset Formula $\left[402.8037;2151.472\right]$
+\end_inset
+
+ is 95% prediction interval
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Cannot do this without first regressing Business Licenses (X) onto Marriage
+ Licenses (Y)
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Because data points are a month of a certain year, months within a year
+ might have correlation with each other.
+ This makes our data point not independent of each other
+\end_layout
+
+\end_deeper
 \end_body
 \end_document
