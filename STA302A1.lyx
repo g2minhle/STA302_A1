@@ -1,0 +1,266 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+STA302 - Assignment 1
+\end_layout
+
+\begin_layout Part*
+Part A
+\end_layout
+
+\begin_layout Enumerate
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $Y_{i}^{'}=\frac{\left(Y_{i}-a\right)}{c}\iff Y_{i}=Y_{i}^{'}c+a$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $X_{i}^{'}=\frac{\left(X_{i}-d\right)}{f}\iff X_{i}=X_{i}^{'}f+d$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\overline{Y^{'}}=\frac{\sum_{i=1}^{n}Y_{i}^{'}}{n}=\frac{\sum_{i=1}^{n}\left[\frac{\left(Y_{i}-a\right)}{c}\right]}{n}=\frac{\sum_{i=1}^{n}Y_{i}}{c*n}-\frac{a}{c}=\frac{\overline{Y}}{c}-\frac{a}{c}=\frac{\overline{Y}-a}{c}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\overline{X^{'}}=\frac{\sum_{i=1}^{n}X_{i}^{'}}{n}=\frac{\sum_{i=1}^{n}\left[\frac{\left(X_{i}-d\right)}{f}\right]}{n}=\frac{\sum_{i=1}^{n}X_{i}}{f*n}-\frac{d}{f}=\frac{\overline{X}}{f}-\frac{d}{f}=\frac{\overline{X}-d}{f}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $b_{1}^{'}=\frac{\sum_{i=1}^{n}\left[\left(X_{i}^{'}-\overline{X}\right)\left(Y_{i}^{'}-\overline{Y}\right)\right]}{\sum_{i=1}^{n}\left(X_{i}^{'}-\overline{X}\right)^{2}}=\frac{\sum_{i=1}^{n}\left[\left(X_{i}^{'}-\overline{X^{'}}\right)\left(Y_{i}^{'}-\overline{Y^{'}}\right)\right]}{\sum_{i=1}^{n}\left(X_{i}^{'}-\overline{X^{'}}\right)^{2}}=\frac{\sum_{i=1}^{n}\left[\left(\frac{\left(X_{i}-d\right)}{f}-\frac{\overline{X}}{f}+\frac{d}{f}\right)\left(\frac{\left(Y_{i}-a\right)}{c}-\frac{\overline{Y}}{c}+\frac{a}{c}\right)\right]}{\sum_{i=1}^{n}\left(\frac{\left(X_{i}-d\right)}{f}-\frac{\overline{X}}{f}+\frac{d}{f}\right)^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\frac{\sum_{i=1}^{n}\left[\left(\frac{\left(X_{i}-d-\overline{X}+d\right)}{f}\right)\left(\frac{\left(Y_{i}-a-\overline{Y}+a\right)}{c}\right)\right]}{\sum_{i=1}^{n}\left(\frac{\left(X_{i}-d-\overline{X}+d\right)}{f}\right)^{2}}=\frac{\sum_{i=1}^{n}\left[\left(\frac{\left(X_{i}-\overline{X}\right)}{f}\right)\left(\frac{\left(Y_{i}-\overline{Y}\right)}{c}\right)\right]}{\sum_{i=1}^{n}\left(\frac{\left(X_{i}-\overline{X}\right)}{f}\right)^{2}}=\frac{\sum_{i=1}^{n}\left[\frac{1}{fc}\left(X_{i}-\overline{X}\right)\left(Y_{i}-\overline{Y}\right)\right]}{\sum_{i=1}^{n}\frac{1}{f^{2}}\left(X_{i}-\overline{X}\right)^{2}}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\frac{f}{c}\frac{\sum_{i=1}^{n}\left[\left(X_{i}-\overline{X}\right)\left(Y_{i}-\overline{Y}\right)\right]}{\sum_{i=1}^{n}\left(X_{i}-\overline{X}\right)^{2}}=\frac{f}{c}*b_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $b_{0}^{'}=\overline{Y^{'}}-b_{1}^{'}\overline{X^{'}}=\frac{\overline{Y}}{c}-\frac{a}{c}-\left(\frac{f}{c}*b_{1}\right)*\left(\frac{\overline{X}}{f}-\frac{d}{f}\right)=\frac{\overline{Y}}{c}-\frac{a}{c}-\left(\frac{b_{1}}{c}\right)*\left(\overline{X}-d\right)=\frac{\overline{Y}}{c}-\frac{a}{c}-\left(\frac{b_{1}\overline{X}}{c}\right)+\left(\frac{b_{1}d}{c}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $=\frac{\overline{Y}}{c}-\frac{a}{c}-\left(\frac{b_{1}\overline{X}}{c}\right)+\left(\frac{b_{1}d}{c}\right)=\left(\frac{b_{1}d}{c}\right)-\frac{a}{c}+\left(\frac{\overline{Y}-b_{1}\overline{X}}{c}\right)=\left(\frac{b_{1}d}{c}\right)-\frac{a}{c}+\left(\frac{b_{0}}{c}\right)=\frac{db_{1}-a-+b_{0}}{c}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $R'^{2}=\frac{\left(SS_{X'Y'}\right)^{2}}{SS_{X'}SS_{Y'}}=\frac{\left[\sum_{i=1}^{n}\left(X'_{i}-\overline{X'}\right)\left(Y'_{i}-\overline{Y'}\right)\right]^{2}}{\left[\sum_{i=1}^{n}\left(X'_{i}-\overline{X'}\right)^{2}\right]\left[\sum_{i=1}^{n}\left(Y'_{i}-\overline{Y'}\right)^{2}\right]}=\frac{\left[\sum_{i=1}^{n}\left(\frac{\left(X_{i}-d\right)}{f}-\frac{\overline{X}-d}{f}\right)\left(\frac{\left(Y_{i}-a\right)}{c}-\frac{\overline{Y}-a}{c}\right)\right]^{2}}{\left[\sum_{i=1}^{n}\left(\frac{\left(X_{i}-d\right)}{f}-\frac{\overline{X}-d}{f}\right)^{2}\right]\left[\sum_{i=1}^{n}\left(\frac{\left(Y_{i}-a\right)}{c}-\frac{\overline{Y}-a}{c}\right)^{2}\right]}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\frac{\left[\sum_{i=1}^{n}\left(\frac{\left(X_{i}-d\right)}{f}-\frac{\overline{X}-d}{f}\right)\left(\frac{\left(Y_{i}-a\right)}{c}-\frac{\overline{Y}-a}{c}\right)\right]^{2}}{\left[\sum_{i=1}^{n}\left(\frac{\left(X_{i}-d\right)}{f}-\frac{\overline{X}-d}{f}\right)^{2}\right]\left[\sum_{i=1}^{n}\left(\frac{\left(Y_{i}-a\right)}{c}-\frac{\overline{Y}-a}{c}\right)^{2}\right]}=\frac{\left[\sum_{i=1}^{n}\left(\frac{\left(X_{i}-\overline{X}\right)}{f}\right)\left(\frac{\left(Y_{i}-\overline{Y}\right)}{c}\right)\right]^{2}}{\left[\sum_{i=1}^{n}\left(\frac{\left(X_{i}-\overline{X}\right)}{f}\right)^{2}\right]\left[\sum_{i=1}^{n}\left(\frac{\left(Y_{i}-\overline{Y}\right)}{c}\right)^{2}\right]}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\frac{\left[\sum_{i=1}^{n}\frac{1}{fc}\left(X_{i}-\overline{X}\right)\left(Y_{i}-\overline{Y}\right)\right]^{2}}{\left[\sum_{i=1}^{n}\frac{1}{f^{2}}\left(X_{i}-\overline{X}\right)^{2}\right]\left[\sum_{i=1}^{n}\frac{1}{c^{2}}\left(Y_{i}-\overline{Y}\right)^{2}\right]}=\frac{\left(\frac{1}{fc}\right)^{2}\left[\sum_{i=1}^{n}\left(X_{i}-\overline{X}\right)\left(Y_{i}-\overline{Y}\right)\right]^{2}}{\frac{1}{f^{2}}\left[\sum_{i=1}^{n}\left(X_{i}-\overline{X}\right)^{2}\right]\frac{1}{c^{2}}\left[\sum_{i=1}^{n}\left(Y_{i}-\overline{Y}\right)^{2}\right]}=\frac{\left[\sum_{i=1}^{n}\left(X_{i}-\overline{X}\right)\left(Y_{i}-\overline{Y}\right)\right]}{\left[\sum_{i=1}^{n}\left(X_{i}-\overline{X}\right)^{2}\right]\left[\sum_{i=1}^{n}\left(Y_{i}-\overline{Y}\right)^{2}\right]}=R^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\widehat{Y'_{i}}=b'_{0}+b'_{1}X'_{i}=\frac{db_{1}-a-b_{0}}{c}+\frac{f}{c}*b_{1}*\frac{\left(X_{i}-d\right)}{f}=\frac{db_{1}-a-b_{0}}{c}+\frac{b_{1}\left(X_{i}-d\right)}{c}=\frac{db_{1}-a-b_{0}}{c}+\frac{b_{1}X_{i}-b_{1}d}{c}$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula $\widehat{Y'_{i}}=\frac{db_{1}-a-b_{0}+b_{1}X_{i}-b_{1}d}{c}=\frac{b_{1}X_{i}+b_{0}-a}{c}=\frac{\widehat{Y_{i}}-a}{c}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $s^{2}\left\{ b'_{1}\right\} =\sum_{i=1}^{n}\left(Y'_{i}-\widehat{Y'_{i}}\right)^{2}=\sum_{i=1}^{n}\left(\frac{\left(Y_{i}-a\right)}{c}-\frac{\widehat{Y_{i}}-a}{c}\right)^{2}=\sum_{i=1}^{n}\left(\frac{\left(Y_{i}-\widehat{Y_{i}}\right)}{c}\right)^{2}=\frac{1}{c^{2}}\sum_{i=1}^{n}\left(Y_{i}-\widehat{Y_{i}}\right)=\frac{1}{c^{2}}s^{2}\left\{ b{}_{1}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $s\left\{ b'_{1}\right\} =\sqrt{\frac{s^{2}\left\{ b'_{1}\right\} }{\sum_{i=1}^{n}\frac{1}{f}\left(X'_{i}-\overline{X'}\right)^{2}}}=\sqrt{\frac{\frac{1}{c^{2}}s^{2}\left\{ b{}_{1}\right\} }{\sum_{i=1}^{n}\frac{1}{f^{2}}\left(X'_{i}-\overline{X'}\right)^{2}}}=\frac{f}{c}*s\left\{ b{}_{1}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+With 
+\begin_inset Formula $E\left[b'_{1}\right]=E\left[\frac{f}{c}*b_{1}\right]=\frac{f}{c}*E\left[b_{1}\right]=\frac{f}{c}*\beta{}_{1}$
+\end_inset
+
+ Then 
+\begin_inset Formula $\beta'{}_{1}=\frac{f}{c}*\beta{}_{1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{b'_{1}-\beta'_{1}}{s\left\{ b'_{1}\right\} }=\frac{\frac{f}{c}*b_{1}-\frac{f}{c}*\beta{}_{1}}{\frac{f}{c}*s\left\{ b{}_{1}\right\} }=\frac{b_{1}-\beta{}_{1}}{s\left\{ b{}_{1}\right\} }$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then the transformations above do not affect inference for 
+\begin_inset Formula $\beta_{1}$
+\end_inset
+
+, the slope parameter
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+.
+\end_layout
+
+\end_deeper
+\begin_layout Section*
+Part B
+\end_layout
+
+\end_body
+\end_document
